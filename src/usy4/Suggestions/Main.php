@@ -459,8 +459,8 @@ class Main extends PluginBase{
         $form->sendToPlayer($player);
     }
     
-    public function like(int $id, string $player){
-        $pn = $player;
+    public function like(int $id, Player $player){
+        $pn = $player->getName();
         $all = $this->getSugs()->getAll() ?? [];
         $name = "";
         foreach ($all as $index => $id_){
