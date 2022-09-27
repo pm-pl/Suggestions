@@ -291,7 +291,7 @@ class Main extends PluginBase{
         $suggestions = $this->getNewerSuggestions();
         $suggestions = array_values($suggestions);
 
-        $form = new SimpleForm(function (Player $player, int $data = null) use ($all, $suggestions){
+        $form = new SimpleForm(function (Player $player, int $data = null) use ($suggestions){
             if($data === null)
                 return false;
             
