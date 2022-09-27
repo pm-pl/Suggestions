@@ -492,7 +492,7 @@ class Main extends PluginBase{
         
         if(isset($all[$id][$name][0]["likes"][$num])){
             $player->sendMessage("You are already liked this suggestion.");   
-            return
+            return;
         }
             
         if(isset($all[$id][$name][0]["dislikes"][$num2])) 
