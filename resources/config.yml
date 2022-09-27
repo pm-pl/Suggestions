@@ -1,0 +1,7 @@
+---
+# suggestions list limit
+AllMax: 30
+
+# player suggestions limit
+AllMax: 3
+...

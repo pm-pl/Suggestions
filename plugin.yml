@@ -1,0 +1,12 @@
+name: Suggestions
+author: usy4
+api: [4.0.0]
+version: 1.0.0
+main: usy4\Suggestions\Main
+descriptions: suggestions form
+
+permissions:
+  suggestions.command:
+    default: true
+  suggestions.admin:
+    default: op
