@@ -244,9 +244,8 @@ class Main extends PluginBase{
     
     public function mostPopularList(Player $player){
         $most = $this->getMostPopularSuggestions();
-        $all = $this->getSugs()->getAll();
 
-        $form = new SimpleForm(function (Player $player, int $data = null) use ($most, $all){
+        $form = new SimpleForm(function (Player $player, int $data = null) use ($most){
             if($data === null)
                 return false;
             
@@ -274,7 +273,6 @@ class Main extends PluginBase{
                 $form->sendToPlayer($player);
             }
         });
-
         if(count($most) === 0){
             $form->setContent("Couldn't find any suggestion!");
             $form->addButton("Okay");
