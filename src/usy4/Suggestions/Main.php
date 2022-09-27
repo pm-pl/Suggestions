@@ -256,7 +256,8 @@ class Main extends PluginBase{
                     null => "",
                     0 => $this->like($sugg["id"], $player),
                     1 => $this->dislike($sugg["id"], $player),
-                    2 => $this->rmSuggestionById($sugg["id"], $player)
+                    2 => $this->rmSuggestionById($sugg["id"], $player),
+                    default => null
                 });
 
                 $form->setTitle("Suggestion id: " . $sugg["id"]);
@@ -302,7 +303,8 @@ class Main extends PluginBase{
                     null => "",
                     0 => $this->like($sugg["id"], $player),
                     1 => $this->dislike($sugg["id"], $player),
-                    2 => $this->rmSuggestionById($sugg["id"], $player)
+                    2 => $this->rmSuggestionById($sugg["id"], $player),
+                    default => null
                 });
 
                 $form->setTitle("Suggestion id: " . $sugg["id"]);
@@ -341,10 +343,14 @@ class Main extends PluginBase{
         $form = new CustomForm(function (Player $player, $data) use ($all){
             if($data === null)
                 return false;
-            if(count($this->getSuggestions($player)) <= $this->PlayerMax() or count($all) <= $this->AllMax())
-                return $player->sendMessage("Sorry, but that the max limit of your suggestions or suggestions all");  
-            if($data[0] == "")
-                return $player->sendMessage("Empty.");  
+            if(count($this->getSuggestions($player)) <= $this->PlayerMax() or count($all) <= $this->AllMax()){
+                $player->sendMessage("Sorry, but that the max limit of your suggestions or suggestions all");
+                return;
+            }
+            if($data[0] == ""){
+                $player->sendMessage("Empty.");  
+                return;
+            }
             $all = $this->getSugs()->getAll() ?? [];
             $range = range(1,$this->AllMax());
             foreach($range as $arr){
@@ -389,7 +395,8 @@ class Main extends PluginBase{
                     null => "",
                     0 => $this->like($sugg["id"], $player),
                     1 => $this->dislike($sugg["id"], $player),
-                    2 => $this->rmSuggestionById($sugg["id"], $player)
+                    2 => $this->rmSuggestionById($sugg["id"], $player),
+                    default => null
                 });
 
                 $form->setTitle("Suggestion id: " . $sugg["id"]);
@@ -483,8 +490,11 @@ class Main extends PluginBase{
             }            
         }
         
-        if(isset($all[$id][$name][0]["likes"][$num]))
-            return $player->sendMessage("You are already liked this suggestion.");   
+        if(isset($all[$id][$name][0]["likes"][$num])){
+            $player->sendMessage("You are already liked this suggestion.");   
+            return
+        }
+            
         if(isset($all[$id][$name][0]["dislikes"][$num2])) 
             unset($all[$id][$name][0]["dislikes"][$num2]);
         $like = $all[$id][$name][0]["likes"];
@@ -522,9 +532,11 @@ class Main extends PluginBase{
                 }
             }
         }
-        if(isset($all[$id][$name][0]["dislikes"][$num]))
-            return $player->sendMessage("You are already disliked this suggestion.");   
-        if(isset($all[$id][$name][0]["likes"][$num2])) 
+        if(isset($all[$id][$name][0]["dislikes"][$num])){
+            $player->sendMessage("You are already disliked this suggestion.");   
+            return;
+        }
+         if(isset($all[$id][$name][0]["likes"][$num2])) 
             unset($all[$id][$name][0]["likes"][$num2]);
         $like = $all[$id][$name][0]["dislikes"];
         $like[] = $pn;
