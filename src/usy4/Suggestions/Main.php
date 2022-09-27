@@ -378,9 +378,8 @@ class Main extends PluginBase{
 
    public function yourSuggestions(Player $player){
         $most = $this->getMostPopularSuggestions();
-        $all = $this->getSugs()->getAll();
-
-        $form = new SimpleForm(function (Player $player, int $data = null) use ($most, $all){
+       
+        $form = new SimpleForm(function (Player $player, int $data = null) use ($most){
             if($data === null)
                 return false;
             
