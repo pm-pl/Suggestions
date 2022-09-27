@@ -457,7 +457,7 @@ class Main extends PluginBase{
         $form->sendToPlayer($player);
     }
     
-    public function like(int $id, Player $player){
+    public function like(int $id, Player $player) : void {
         $pn = $player->getName();
         $all = $this->getSugs()->getAll() ?? [];
         $name = "";
@@ -497,7 +497,7 @@ class Main extends PluginBase{
         $player->sendMessage("Done, you liked this suggestion.");
     }
     
-     public function dislike(int $id, Player $player){
+     public function dislike(int $id, Player $player) : void{
         $pn = $player->getName();
         $all = $this->getSugs()->getAll() ?? [];
         $name = "";
