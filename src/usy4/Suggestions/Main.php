@@ -366,8 +366,7 @@ class Main extends PluginBase{
                 }
             }
         });
-        $form->setTitle("Add a suggestion");
-        $form->setContent("You have " .count($this->getSuggestions($player)) . "suggestion");
+        $form->setTitle("Add a suggestion " . "[" . count($this->getSuggestions($player)) . "]");
         if(count($this->getSuggestions($player)) <= $this->PlayerMax() or count($all) <= $this->AllMax()){
             $form->addInput("Suggest", "Add new games...");
         } else {
