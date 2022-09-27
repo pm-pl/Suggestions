@@ -252,7 +252,7 @@ class Main extends PluginBase{
             if(isset($most[$data])){
                 $sugg = $most[$data];
 
-                $form = new SimpleForm(fn(Player $player, ?int $data = null) => match ($data){
+                $form = new SimpleForm(fn(Player $player, $data = null) => match ($data){
                     null => "",
                     0 => $this->like($sugg["id"], $player),
                     1 => $this->dislike($sugg["id"], $player),
