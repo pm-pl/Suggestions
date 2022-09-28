@@ -343,7 +343,7 @@ class Main extends PluginBase{
         $form = new CustomForm(function (Player $player, $data) use ($all){
             if($data === null)
                 return false;
-            if(count($this->getSuggestions($player)) <= $this->PlayerMax() or count($all) <= $this->AllMax()){
+            if(count($this->getSuggestions($player)) >= $this->PlayerMax() or count($all) >= $this->AllMax()){
                 $player->sendMessage("Sorry, but that the max limit of your suggestions or suggestions all");
                 return;
             }
