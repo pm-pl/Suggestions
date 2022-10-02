@@ -1,7 +1,7 @@
 # Suggestions
 Players can suggest for your server
 # How to use
-/suggestions and it open form ui with for suggestions
+/suggestions A suggestion form will open
 # Permissions
 ```
 permissions:
