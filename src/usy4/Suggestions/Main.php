@@ -9,9 +9,9 @@ use pocketmine\utils\TextFormat;
 use pocketmine\player\Player;
 use pocketmine\utils\Config;
 
-use usy4\Suggestions\libs\jojoe77777\FormAPI\SimpleForm;
-use usy4\Suggestions\libs\jojoe77777\FormAPI\CustomForm;
-use usy4\Suggestions\libs\jojoe77777\FormAPI\ModalForm;
+use Vecnavium\FormAPI\SimpleForm;
+use Vecnavium\FormAPI\CustomForm;
+use Vecnavium\FormAPI\ModalForm;
 
 class Main extends PluginBase{
     
