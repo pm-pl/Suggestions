@@ -9,9 +9,9 @@ use pocketmine\utils\TextFormat;
 use pocketmine\player\Player;
 use pocketmine\utils\Config;
 
-use Vecnavium\FormsAPI\SimpleForm;
-use Vecnavium\FormsAPI\CustomForm;
-use Vecnavium\FormsAPI\ModalForm;
+use Vecnavium\FormsUI\SimpleForm;
+use Vecnavium\FormsUI\CustomForm;
+use Vecnavium\FormsUI\ModalForm;
 
 class Main extends PluginBase{
     
