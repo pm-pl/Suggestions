@@ -6,4 +6,8 @@ projects:
   Suggestions:
     path: ""
     icon: "Suggestions.png"
+    libs:
+    libs:
+      - src: Vecnavium/FormsUI/FormsUI
+        version: ^1.0.0
 ...
