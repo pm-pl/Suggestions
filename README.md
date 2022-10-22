@@ -8,7 +8,7 @@ permissions:
   suggestions.command:
     default: true
   suggestions.admin:
-    default: op
+ default: op
 ```
 # config
 ```
@@ -17,7 +17,7 @@ permissions:
 AllMax: 30
 
 # player suggestions limit
-AllMax: 3
+PlayerMax: 3
 ...
 ```
 # My Discord
